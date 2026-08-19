@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Playwrite+CU+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital,wght@0,200;1,200&family=Sriracha&family=Tektur:wght@400..900&display=swap');
+
+@font-face {
+    font-family: 'Matcha Mint';
+    src: url(Fonts/matcha_mint/Matcha\ Mint.otf) format("opentype");
+}
+
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#caixa-1 {
+    background-color: black;
+    min-height: 50vh;
+    width: auto;
+    box-sizing: border-box;
+    padding: 8% 0 0 6%;
+}
+
+
+#caixa-1 h1 {
+    font-family: 'Matcha Mint', cursive;
+    color: white;
+    font-size: 4.5em;
+}
+
+#caixa-2 {
+    background-color: rgb(255, 187, 0);
+    min-height: 50vh;
+    width: auto;
+    box-sizing: border-box;
+    padding: 8% 0 0 6%;
+}
+
+#principal {
+    
+}
+
+.pequeno {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.5em;
+    color: white;
+}
+ .pequeno1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.6em;
+    color: white;
+    padding-top: 10px;
+ }
+
+
+.titulo {
+
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.linha-branca {
+    color: white;
+}
+
+.linha-amarela {
+    color: rgb(255, 187, 0);
+}
