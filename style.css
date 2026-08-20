@@ -1,70 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Playwrite+CU+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital,wght@0,200;1,200&family=Sriracha&family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Passion+One:wght@400;700;900&family=Playwrite+CU+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital,wght@0,527;1,527&family=Sriracha&family=Tektur:wght@400..900&display=swap');
+
 
 @font-face {
     font-family: 'Matcha Mint';
     src: url(Fonts/matcha_mint/Matcha\ Mint.otf) format("opentype");
 }
 
-
-
-
-
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.conteudo-largura {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #caixa-1 {
-    background-color: black;
-    min-height: 50vh;
-    width: auto;
-    box-sizing: border-box;
-    padding: 8% 0 0 6%;
+    background-color: rgba(36, 35, 35, 0.979);
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
 }
 
-
-#caixa-1 h1 {
-    font-family: 'Matcha Mint', cursive;
-    color: white;
-    font-size: 4.5em;
+#caixa-1 .conteudo-largura {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vw;
+    padding: 8% 6%;
 }
 
-#caixa-2 {
-    background-color: rgb(255, 187, 0);
-    min-height: 50vh;
-    width: auto;
-    box-sizing: border-box;
-    padding: 8% 0 0 6%;
-}
-
-#principal {
-    
+.caixa-texto {
+    flex: 1;
+    min-width: 0;
 }
 
 .pequeno {
+    font-family: 'Fraunces', 'Passion One', cursive;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.5em;
+    font-size: clamp(0.5rem, 1vw, 0.85rem);
     color: white;
+    margin-bottom: 14px;
 }
- .pequeno1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.6em;
-    color: white;
-    padding-top: 10px;
- }
-
 
 .titulo {
-
     display: flex;
     flex-direction: column;
     line-height: 1;
+    font-family: 'Fraunces', 'Passion One', cursive;
+    font-size: clamp(3.5rem, 6vw, 6rem);
 }
 
 .linha-branca {
@@ -73,4 +73,195 @@ body {
 
 .linha-amarela {
     color: rgb(255, 187, 0);
+}
+
+.pequeno1 {
+    font-family: 'Fraunces', 'Passion One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: clamp(0.4rem, 1vw, 0.9rem);
+    color: white;
+    padding-top: 6px;
+}
+
+.fita {
+    flex-shrink: 0;
+    width: clamp(150px, 25vw, 420px);
+    height: auto;
+}
+
+#caixa-2 {
+    background-color: rgba(112, 110, 110, 0.600);
+    width: 100%;
+    min-height: 50vh;
+}
+
+#caixa-2 .conteudo-largura {
+    padding: 6% 6%;
+}
+
+.navbar {
+    background-color: rgba(36, 35, 35, 0.979);
+    width: 100%;
+}
+
+.nav-inner {
+    padding: 20px 6%;
+}
+
+.nav-inner ul {
+    display: flex;
+    gap: 70px;
+    list-style: none;
+    justify-content: right;
+}
+
+.nav-inner a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Fraunces', 'Passion One', cursive;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    padding: 8px 2px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-inner a.ativo {
+    border-bottom: 2px solid rgb(255, 187, 0);
+}
+
+.frase-lateral {
+    color: white;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    line-height: 1.5;
+    flex: 0 1 180px;
+    max-width: 180px;
+    text-align: left;
+}
+
+.frase-lateral .destaque {
+    color: rgb(255, 187, 0);
+    font-weight: 600;
+}
+
+.fita-frase {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.ajuda {
+    color: white;
+    background-color: #da8600;
+    padding: 5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.ajuda:hover {
+    background-color: #ffbb00;
+    transform: scale(1.07);
+}
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburguer span {
+    width: 26px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    #caixa-1 .conteudo-largura {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+        padding: 12% 8%;
+    }
+
+    .caixa-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fita-frase {
+        justify-content: center;
+    }
+
+    .fita {
+        width: clamp(140px, 40vw, 260px);
+    }
+
+    .hamburguer {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    #menu-lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    #menu-lista.aberto {
+        max-height: 300px;
+        opacity: 1;
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #caixa-1 {
+        min-height: auto;
+    }
+
+    #caixa-1 .conteudo-largura {
+        padding: 18% 8%;
+    }
+
+    .titulo {
+        font-size: clamp(2.2rem, 12vw, 3rem);
+    }
 }
