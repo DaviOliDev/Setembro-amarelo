@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+main {
+    padding-top: 1px;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     width: 100%;
@@ -64,7 +68,7 @@ img {
     flex-direction: column;
     line-height: 1;
     font-family: 'Fraunces', 'Passion One', cursive;
-    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-size: clamp(5.5rem, 6vw, 6rem);
 }
 
 .linha-branca {
@@ -76,7 +80,7 @@ img {
 }
 
 .pequeno1 {
-    font-family: 'Fraunces', 'Passion One', cursive;
+    font-family: Georgia, "Times New Roman", serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: clamp(0.4rem, 1vw, 0.9rem);
@@ -90,21 +94,27 @@ img {
     height: auto;
 }
 
-#caixa-2 {
-    background-color: rgba(112, 110, 110, 0.600);
-    width: 100%;
-    min-height: 50vh;
-}
-
 #caixa-2 .conteudo-largura {
     padding: 6% 6%;
 }
 
 .navbar {
-    background-color: rgba(36, 35, 35, 0.979);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.35);
     width: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+    z-index: 100;
 }
 
+.navbar.rolou {
+    background-color: rgba(20, 20, 20, 0.75);
+    padding: 0;
+}
 .nav-inner {
     padding: 20px 6%;
 }
@@ -122,17 +132,36 @@ img {
     font-family: 'Fraunces', 'Passion One', cursive;
     font-size: clamp(0.8rem, 1vw, 1rem);
     padding: 8px 2px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
+    position: relative;
+
 }
 
-.nav-inner a.ativo {
-    border-bottom: 2px solid rgb(255, 187, 0);
+.nav-inner ul > li:not(.ajuda) a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(255, 187, 0);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-inner ul > li:not(.ajuda) a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-inner ul > li:not(.ajuda) a.ativo::after {
+    transform: scaleX(1);
+    transition: none;
 }
 
 .frase-lateral {
+    font-family: Georgia, "Times New Roman", serif;
     color: white;
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-size: clamp(0.5rem, 1.2vw, 1.1rem);
     line-height: 1.5;
     flex: 0 1 180px;
     max-width: 180px;
@@ -181,6 +210,111 @@ img {
     transition: all 0.3s ease;
 }
 
+.botao {
+    display: inline-block;
+    background-color: #da8600;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-family: 'Fraunces', 'Passion One', cursive;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #ffbb00;
+    transform: scale(1.07);
+}
+
+#caixa-2 {
+    background-color: rgba(112, 110, 110, 0.600);
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.onda {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: block;
+}
+
+.onda-topo {
+    bottom: auto;
+    top: -1px;
+}
+
+.pequeno-3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    color: rgb(50, 50, 50);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.titulo-2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    text-align: center;
+}
+
+.estatisticas {
+    margin-top: 70px;
+    display: flex;
+    gap: 40px;
+}
+
+.estatistica {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    padding-left: 30px;
+    border-left: 2px solid rgba(0, 0, 0, 0.068);
+}
+
+.estatistica:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+
+.estatistica-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+dt {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: block;
+}
+
+dd {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(75, 73, 73);
+}
+
+.icone {
+    width: 40px;
+    height: 40px;
+    color: rgb(255, 187, 0);
+    flex-shrink: 0;
+}
+
+#caixa-3 {
+    background-color: #282727;
+    padding: 30vh;
+}
 
 
 
@@ -235,19 +369,37 @@ img {
 
     #menu-lista {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
         width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease, opacity 0.3s ease;
         opacity: 0;
+        background-color: transparent;
     }
 
     #menu-lista.aberto {
         max-height: 300px;
         opacity: 1;
         margin-top: 20px;
+    }
+
+    .estatisticas {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .estatistica {
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .estatistica:first-child {
+        border-top: none;
+        padding-top: 0;
     }
 
 }

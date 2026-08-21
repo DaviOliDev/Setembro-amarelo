@@ -1,4 +1,4 @@
-const links = document.querySelectorAll('.nav-inner a');
+const links = document.querySelectorAll('.nav-inner ul > li:not(.ajuda) a');
 
 links.forEach(link => {
     link.addEventListener('click', () => {
@@ -14,4 +14,14 @@ const menuLista = document.getElementById('menu-lista');
 
 botaoMenu.addEventListener('click', () => {
     menuLista.classList.toggle('aberto');
+});
+
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('rolou');
+    } else {
+        navbar.classList.remove('rolou');
+    }
 });
